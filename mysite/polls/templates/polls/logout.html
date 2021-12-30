@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Logout</title>
+  </head>
+  <body>
+    <h2>{{ text }}</h2>
+    <ul>
+    <form action="{% url 'polls:logout' %}" method="POST">
+      {% csrf_token %}
+      <input type="submit" value="Logout">
+    </form>
+    </ul>
+
+  </body>
+</html>

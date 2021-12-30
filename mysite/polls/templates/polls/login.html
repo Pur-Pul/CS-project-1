@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Login</title>
+  </head>
+  <body>
+    <h2>{{ text }}</h2>
+    <ul>
+    <form action="{% url 'polls:login' %}" method="POST">
+      {% csrf_token %}
+      <label for="username">Username:</label><br>
+      <input type="text" id="username" name="username"><br>
+      <label for="password">Password:</label><br>
+      <input type="text" id="password" name="password"><br>
+      <input type="submit" value="Submit">
+    </form>
+    </ul>
+    {% comment %}
+    <h2>Forgot username or password?</h2>
+    <ul>
+      <form action="{% url 'polls:reclaimaccount' %}" method="POST">
+        {% csrf_token %}
+        <label for="email">Enter the email used to create the account</label><br>
+        <input type="text" id="email" name="email"><br>
+        <input type="submit" value="Reclaim account">
+      </form>
+    </ul>
+    {% endcomment %}
+    <h2>New? Register!</h2>
+    <ul>
+    <form action="{% url 'polls:register' %}" method="POST">
+      {% csrf_token %}
+      {% comment %}
+      <label for="email">Email:</label><br>
+      <input type="text" id="email" name="email"><br>
+      {% endcomment %}
+      <label for="username">Username:</label><br>
+      <input type="text" id="username" name="username"><br>
+      <label for="password">Password:</label><br>
+      <input type="text" id="password" name="password"><br>
+      <input type="submit" value="Submit">
+    </form>
+    </ul>
+    <!--
+    {% if faults %}
+      {% for fault in faults %}
+        <h3>{{ fault }}</h3>
+      {% endfor %}
+    {% endif %}
+  -->
+
+  </body>
+</html>
