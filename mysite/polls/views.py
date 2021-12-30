@@ -99,14 +99,14 @@ def register(request, key=0):
     if request.method == 'POST':
         un = request.POST.get('username')
         pw = request.POST.get('password')
-        em = request.POST.get('email')
+        #em = request.POST.get('email')
         #faults = pw_faults(pw)
         #if len(faults) > 0:
         #    return render(request, 'polls/login.html', {"faults" : faults, "text" : "Please login"})
             #log(request, 'failed registration', un)
 
-        user = User.objects.create_user(username=un, password=pw
-        , email=em
+        #user = User.objects.create_user(username=un, password=pw
+        #, email=em
         )
         #log(request, 'registration')
         auth_login(request, user)
